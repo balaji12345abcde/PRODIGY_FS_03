@@ -1,0 +1,12 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>Checkout</h2>
+<ul>{% for it in items %}<li>{{ it.name }} x{{ it.qty }} - ₹{{ it.price }}</li>{% endfor %}</ul>
+<p>Total: ₹{{ total }}</p>
+<form method="post">{% csrf_token %}
+  <p><input name="name" placeholder="Full name" required></p>
+  <p><input name="email" placeholder="Email" required></p>
+  <p><textarea name="address" placeholder="Address" required></textarea></p>
+  <button>Place Order</button>
+</form>
+{% endblock %}

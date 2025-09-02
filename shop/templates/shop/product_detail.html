@@ -1,0 +1,15 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>{{ product.name }}</h2>
+{% if product.image %}<img src="{{ product.image.url }}" style="max-width:300px;">{% endif %}
+<p>Price: ₹{{ product.price }}</p>
+<p>{{ product.description }}</p>
+<a href="{% url 'add_to_cart' product.pk %}">Add to cart</a>
+<hr>
+<h3>Reviews</h3>
+{% for r in product.reviews.all %}
+  <div class="review"><strong>{{ r.user_name }}</strong> ({{ r.rating }}/5): {{ r.comment }}</div>
+{% empty %}<p>No reviews yet.</p>{% endfor %}
+<h4>Add Review</h4>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button>Submit</button></form>
+{% endblock %}

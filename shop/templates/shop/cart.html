@@ -1,0 +1,19 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>Your Cart</h2>
+<form method="post" action="{% url 'update_cart' %}">{% csrf_token %}
+<table>
+  <tr><th>Product</th><th>Qty</th><th>Subtotal</th></tr>
+  {% for it in items %}
+  <tr>
+    <td>{{ it.product.name }}</td>
+    <td><input type="number" name="qty_{{ it.product.id }}" value="{{ it.qty }}" min="0"></td>
+    <td>₹{{ it.subtotal }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<p>Total: ₹{{ total }}</p>
+<button type="submit">Update Cart</button>
+</form>
+<a href="{% url 'checkout' %}">Proceed to Checkout</a>
+{% endblock %}

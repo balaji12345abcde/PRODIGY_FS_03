@@ -1,0 +1,9 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>All Orders</h2>
+<ul>
+  {% for o in orders %}
+    <li>Order #{{ o.id }} - {{ o.name }} - ₹{{ o.total }} - {{ o.status }}</li>
+  {% empty %}<li>No orders yet.</li>{% endfor %}
+</ul>
+{% endblock %}

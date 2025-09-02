@@ -1,0 +1,42 @@
+[
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "name": "Green Sneakers",
+      "description": "Comfortable green sneakers.",
+      "price": "2499.00",
+      "category": "Footwear"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 2,
+    "fields": {
+      "name": "Blue Jeans",
+      "description": "Slim fit blue jeans.",
+      "price": "1799.00",
+      "category": "Apparel"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 3,
+    "fields": {
+      "name": "White T-Shirt",
+      "description": "Cotton t-shirt.",
+      "price": "499.00",
+      "category": "Apparel"
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 4,
+    "fields": {
+      "name": "Leather Wallet",
+      "description": "Genuine leather wallet.",
+      "price": "899.00",
+      "category": "Accessories"
+    }
+  }
+]
